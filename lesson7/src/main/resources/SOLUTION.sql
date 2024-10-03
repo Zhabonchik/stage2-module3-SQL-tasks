@@ -1,21 +1,5 @@
-select *
-from mark
-where MARK > 6
-order by mark desc;
-
-select *
-from PAYMENT
-where amount < 300
-order by amount;
-
-select *
-from paymenttype
-order by name;
-
-select * from STUDENT order by name desc;
-
-select distinct s.*
-from student s
-         inner join payment p on (p.student_id = s.id)
-where p.amount > 1000
-order by s.birthday;
+select * from mark where mark > 6 order by mark desc ;
+SELECT * FROM payment WHERE amount < 300 ORDER BY amount;
+SELECT * FROM paymenttype ORDER BY name;
+SELECT * FROM student ORDER BY name DESC;
+SELECT DISTINCT s.id, s.name, s.birthday, s.groupnumber FROM student AS s JOIN payment AS p ON s.id = p.student_id WHERE p.amount > 1000 ORDER BY s.birthday;
